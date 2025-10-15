@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pocket Rogue</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="play-area">
+        <header class="hud">
+          <h1>Pocket Rogue</h1>
+          <div class="stats" id="stats"></div>
+          <div class="message" id="message"></div>
+        </header>
+        <pre class="map" id="map" aria-label="Dungeon map" role="img"></pre>
+      </section>
+      <section class="controls" aria-label="Touch controls">
+        <div class="row">
+          <button class="control" data-dir="up" aria-label="Move up">▲</button>
+        </div>
+        <div class="row">
+          <button class="control" data-dir="left" aria-label="Move left">◀</button>
+          <button class="control" data-dir="wait" aria-label="Wait">■</button>
+          <button class="control" data-dir="right" aria-label="Move right">▶</button>
+        </div>
+        <div class="row">
+          <button class="control" data-dir="down" aria-label="Move down">▼</button>
+        </div>
+        <button class="control wide" id="new-game">New Dungeon</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>
+        Defeat monsters, grab crystals, and reach the exit <strong>&gt;</strong>. Built for
+        phones—no keyboard needed!
+      </p>
+    </footer>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
