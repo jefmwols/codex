@@ -1,30 +1,31 @@
 # Codex
 
-This repository is currently a bootstrap workspace for future Codex experiments.
-It only contains placeholder content, so you can tailor the setup to whatever
-prototype or tutorial you want to build.
+Pocket Rogue is a tiny ASCII-inspired roguelike that runs entirely in the
+browser and plays great on phones. Move with the on-screen D-pad, collect
+crystals, and find the glowing exit to escape the dungeon.
 
-## Getting Started
+## Play the Game
 
-1. Clone this repository:
+Open `index.html` in any modern desktop or mobile browser. No build step is
+required.
 
-   ```bash
-   git clone git@github.com:jefmwols/codex.git
-   cd codex
-   ```
+Controls:
 
-2. Add your project sources inside this directory. If you already have a project,
-   copy or move its files here.
+- ▲ ◀ ▶ ▼ — move around the dungeon
+- ■ — wait in place to let monsters advance
+- Tap the map — move toward the tapped tile
+- **New Dungeon** — generate a fresh level at any time
 
-3. Replace the placeholder `tmp` file once you have real content; it simply keeps
-   the repository non-empty.
+## Deploying to GitHub Pages
 
-## Suggested Next Steps
+1. Commit and push the repository to GitHub.
+2. In the repository settings, enable GitHub Pages and choose the main branch as
+   the source.
+3. After GitHub builds the site, visit the published URL (e.g.
+   `https://<username>.github.io/codex/`) to play Pocket Rogue online.
 
-- Document the project’s purpose and architecture once you add code.
-- Record any prerequisites (toolchains, SDKs, environment variables).
-- Capture how to run the application, scripts, or tests.
-- Add contribution guidelines and a license if you plan to collaborate.
+Because the game consists of static HTML, CSS, and JavaScript files, no extra
+configuration is necessary.
 
 ## Contributing
 
