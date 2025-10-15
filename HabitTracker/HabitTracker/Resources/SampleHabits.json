@@ -1,0 +1,35 @@
+[
+  {
+    "id" : "c48f807d-08d0-4d46-bf92-9a3762e508d1",
+    "title" : "Ship design update",
+    "summary" : "Polish the v2 mockups and gather feedback from design review.",
+    "status" : "in_progress",
+    "category" : "productivity",
+    "createdAt" : "2024-03-01T09:00:00Z",
+    "dueAt" : "2024-03-05T17:00:00Z",
+    "completedAt" : null,
+    "notes" : "Pair with Alex on the accessibility checks."
+  },
+  {
+    "id" : "f7f7428d-72b4-41db-92cb-8ff335cfd1b3",
+    "title" : "Take a mindful walk",
+    "summary" : "30 minute walk without headphones.",
+    "status" : "planned",
+    "category" : "wellness",
+    "createdAt" : "2024-03-02T12:00:00Z",
+    "dueAt" : "2024-03-03T12:00:00Z",
+    "completedAt" : null,
+    "notes" : "Invite a teammate to join."
+  },
+  {
+    "id" : "89f74f36-9cb5-48a3-8f65-18a3c434f47e",
+    "title" : "Finish SwiftUI tutorial",
+    "summary" : "Complete the chapter on navigation and data flow.",
+    "status" : "completed",
+    "category" : "learning",
+    "createdAt" : "2024-02-25T08:30:00Z",
+    "dueAt" : "2024-02-28T18:00:00Z",
+    "completedAt" : "2024-02-28T15:45:00Z",
+    "notes" : "Share key takeaways in #learning channel."
+  }
+]
