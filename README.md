@@ -1,37 +1,52 @@
-# Codex
+# News Aggregator
 
-This repository is currently a bootstrap workspace for future Codex experiments.
-It only contains placeholder content, so you can tailor the setup to whatever
-prototype or tutorial you want to build.
+A native iOS SwiftUI application that brings together the latest headlines from multiple free news sources. The experience focuses on speed, accessibility, and discoverability, offering category filters, search, and in-app article viewing.
 
-## Getting Started
+## Features
 
-1. Clone this repository:
+- **Multi-source aggregation** – fetches stories from Hacker News, The Guardian (open API), and the Spaceflight News API.
+- **Category filters** – quickly jump between Top Stories, Technology, Business, Science, Sports, and Culture.
+- **Search** – filter articles with instant, debounced search that matches titles, summaries, or sources.
+- **SwiftUI interface** – modern list layout with pull-to-refresh, inline loading/error states, and Safari presentation for reading articles.
+- **Preview data** – SwiftUI previews are powered by mock providers for rapid UI iteration without hitting real APIs.
 
-   ```bash
-   git clone git@github.com:jefmwols/codex.git
-   cd codex
-   ```
+## Architecture
 
-2. Add your project sources inside this directory. If you already have a project,
-   copy or move its files here.
+```
+NewsAggregator/
+├── Models/           // Immutable data models shared across the app
+├── Services/         // Networking providers and aggregator actor
+├── Utilities/        // Shared formatters and helpers
+├── ViewModels/       // ObservableObject state for SwiftUI views
+└── Views/            // SwiftUI screens and components
+```
 
-3. Replace the placeholder `tmp` file once you have real content; it simply keeps
-   the repository non-empty.
+- `NewsViewModel` orchestrates fetching via the `NewsAggregatorService`, stores UI state, and exposes filtered articles.
+- `NewsAggregatorService` fans out requests to each `NewsProviding` conformer using structured concurrency, merges results, and deduplicates articles by URL.
+- Each provider (Hacker News, Guardian, Spaceflight) maps raw API responses into the shared `Article` model.
 
-## Suggested Next Steps
+## Requirements
 
-- Document the project’s purpose and architecture once you add code.
-- Record any prerequisites (toolchains, SDKs, environment variables).
-- Capture how to run the application, scripts, or tests.
-- Add contribution guidelines and a license if you plan to collaborate.
+- Xcode 15 or newer
+- iOS 17 SDK (the app targets iOS 17 and uses modern SwiftUI components like `NavigationStack` and `ContentUnavailableView`).
 
-## Contributing
+## Running the App
 
-Pull requests are welcome. Please include enough context in your commit messages
-and PR descriptions so future readers understand the intent.
+1. Open `NewsAggregator` in Xcode.
+2. Select the *NewsAggregator* scheme and an iOS Simulator or device running iOS 17.
+3. Build and run (`Cmd+R`).
 
-## License
+The first launch will request articles for the "Top Stories" category. Pull down to refresh or switch categories from the leading navigation menu.
 
-Choose and document a license before sharing the project externally. Popular
-choices include MIT, Apache 2.0, or GPL depending on your needs.
+## Configuration Notes
+
+- The Guardian API key defaults to `test`, which works for development rate limits. You can provide your own key by updating `GuardianNewsProvider.apiKey`.
+- Network requests rely on public APIs without authentication (except Guardian's test key). For production, consider adding caching and more resilient error handling.
+
+## Testing
+
+Unit/UI tests are not yet included. Recommended next steps include isolating `NewsViewModel` with dependency injection and covering network providers with mocked URL protocols.
+
+## Screenshots
+
+Once you build and run the app, capture screenshots of the main list and article detail views to include in this section.
