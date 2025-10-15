@@ -1,35 +1,50 @@
 # Codex
 
-This repository is currently a bootstrap workspace for future Codex experiments.
-It only contains placeholder content, so you can tailor the setup to whatever
-prototype or tutorial you want to build.
+Habit Tracker is a native iOS application for capturing and reinforcing everyday
+habits. The app is built entirely with SwiftUI and keeps your data local using
+JSON persistence. It supports filtering, search, detail views, and an inline
+editor so you can document context, due dates, and notes about each routine you
+care about.
 
-## Getting Started
+## Project Structure
 
-1. Clone this repository:
+```
+HabitTracker/
+├─ HabitTracker.xcodeproj/        # Xcode project
+└─ HabitTracker/
+   ├─ Models/                     # Data models (Habit, enums)
+   ├─ ViewModels/                 # Observable stores and persistence
+   ├─ Views/                      # SwiftUI screens and components
+   ├─ Resources/                  # Seed JSON and launch assets
+   ├─ Assets.xcassets/            # App icon and color catalog
+   └─ Preview Content/            # Data for SwiftUI previews
+```
 
-   ```bash
-   git clone git@github.com:jefmwols/codex.git
-   cd codex
-   ```
+## Requirements
 
-2. Add your project sources inside this directory. If you already have a project,
-   copy or move its files here.
+- Xcode 15 or newer
+- iOS 16.0 deployment target (runs on iPhone and iPad)
 
-3. Replace the placeholder `tmp` file once you have real content; it simply keeps
-   the repository non-empty.
+## Running the App
 
-## Suggested Next Steps
+1. Open `HabitTracker/HabitTracker.xcodeproj` in Xcode.
+2. Select the `HabitTracker` scheme and an iOS simulator or device.
+3. Build and run (`⌘R`).
 
-- Document the project’s purpose and architecture once you add code.
-- Record any prerequisites (toolchains, SDKs, environment variables).
-- Capture how to run the application, scripts, or tests.
-- Add contribution guidelines and a license if you plan to collaborate.
+On first launch the app seeds a few example habits from
+`Resources/SampleHabits.json`. Subsequent edits are stored locally in the
+application’s documents directory.
+
+## Next Steps
+
+- Wire up CloudKit or another sync solution for multi-device histories.
+- Add widgets or Live Activities to surface recent habits.
+- Expand filtering with tags or streak analytics.
 
 ## Contributing
 
-Pull requests are welcome. Please include enough context in your commit messages
-and PR descriptions so future readers understand the intent.
+Pull requests are welcome. Please include context in commit messages and PR
+descriptions so future readers understand the intent.
 
 ## License
 
